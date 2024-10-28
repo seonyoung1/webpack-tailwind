@@ -1,0 +1,44 @@
+@use "sass:math";
+@import 'mixins/clearfix';
+@import 'mixins/vw-conversion';
+@import 'mixins/font';
+
+@mixin flex-center() {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@mixin flex-between() {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+@mixin center($position: absolute) {
+    position:$position;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+$browser-context-mo: 16;
+@mixin em-font-size-mo($pixels, $context: $browser-context-mo){
+    font-size:(math.div($pixels, $context)) * 1em;
+}
+
+

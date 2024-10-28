@@ -1,0 +1,17 @@
+///********************///
+///*    Direction     *///
+///********************///
+
+// RTL languages directions.
+
+$def-float: right;
+$opp-float: left;
+
+$def-flex: flex-end;
+$opp-flex: flex-start;
+
+$def-direction: rtl;
+$opp-direction: ltr;
+
+@import 'variables';
+@import 'mixins';
